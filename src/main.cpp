@@ -7,24 +7,24 @@ int main() {
     std::string desc;
 
     do {
-        std::cout << "\nTask Manager Menu:\n";
-        std::cout << "1. List tasks\n";
-        std::cout << "2. Add task\n";
-        std::cout << "3. Complete task\n";
-        std::cout << "4. Delete task\n";
-        std::cout << "0. Exit\n";
-        std::cout << "Choice: ";
+        std::cout<< "Please enter a suitable choice from thetask manager menu:- "<<std::endl;
+        std::cout << "Task Manager Menu:-"<<std::endl;
+        std::cout << "1. List tasks"<<std::endl;
+        std::cout << "2. Add task"<<std::endl;
+        std::cout << "3. Complete task"<<std::endl;
+        std::cout << "4. Delete task"<<std::endl;
+        std::cout << "0. Exit the menu"<<std::endl;
         std::cin >> choice;
         std::cin.ignore();
 
         switch(choice) {
             case 1:
-                manager.listTasks();
+                manager.listNewTasks();
                 break;
             case 2:
                 std::cout << "Task description: ";
                 std::getline(std::cin, desc);
-                manager.addTask(desc);
+                manager.addNewTask(desc);
                 break;
             case 3:
                 int idComplete;

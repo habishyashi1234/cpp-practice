@@ -4,16 +4,19 @@
 #include <sstream>
 #include <algorithm>
 
+// Construction of tasks from a file with the correct entries.
 TaskManager::TaskManager(const std::string& file) : nextId(1), dataFile(file) {
     loadFromFile();
 }
 
-void TaskManager::addTask(const std::string& description) {
+// Adds a new task to the list of task pool. 
+void TaskManager::addNewTask(const std::string& description) {
     tasks.emplace_back(nextId++, description);
     saveToFile();
 }
 
-void TaskManager::listTasks() const {
+//Lists all existing tasks.
+void TaskManager::listNewTasks() const {
     for (const auto& task : tasks) {
         std::cout << "[" << (task.isCompleted() ? "X" : " ") << "] "
                   << task.getId() << ": " << task.getDescription() << std::endl;

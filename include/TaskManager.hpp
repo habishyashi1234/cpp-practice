@@ -11,8 +11,8 @@ private:
 
 public:
     TaskManager(const std::string& file);
-    void addTask(const std::string& description);
-    void listTasks() const;
+    void addNewTask(const std::string& description);
+    void listNewTasks() const;
     void completeTask(int id);
     void deleteTask(int id);
     void loadFromFile();
